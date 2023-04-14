@@ -3,7 +3,7 @@ import numpy as np
 
 class SimpleHeuristicModel():
     def __init__(self):
-        self.means = pd.read_csv('means_heuristic_model.csv').to_numpy()
+        self.means = pd.read_csv('heuristic_model/means_heuristic_model.csv').to_numpy()
         self.input = None
 
 
