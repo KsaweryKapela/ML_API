@@ -30,4 +30,5 @@ more set of features as input and return values predicted by specific model. One
 two models, which the user can choose from by providing a different variable in the URL. The requests
 made to all API endpoints can be seen in the using_API file.
 
-The Dockerfile build is working, but the image was not created or tested due to time limitations.
+Docker container image serving API can be found in a link below:
+https://hub.docker.com/repository/docker/ksawerykapela/api_ml/general
