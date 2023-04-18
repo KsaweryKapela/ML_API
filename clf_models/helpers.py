@@ -38,4 +38,3 @@ def one_hot_encode(arr):
     encoded_labels = encoder.fit_transform(arr.reshape(-1, 1))
     arr = encoded_labels.toarray()
     return arr
-

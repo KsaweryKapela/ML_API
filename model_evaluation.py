@@ -84,4 +84,3 @@ if __name__ == '__main__':
     matrices_dict = dict(zip(labels, matrices))
 
     plot_confusion_matrices(matrices_dict)
-
