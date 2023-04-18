@@ -38,3 +38,18 @@ more set of features as payload and return values predicted by specific model. O
 two models, which the user can choose from by providing a different variable in the URL.
 
 Dockerfile was created for a project, from which API image can be build and run.
+
+### Example code to make API request on local server:
+import requests
+from clf_models.helpers import open_covtype_sample, X_y_split
+
+X, y = X_y_split(open_covtype_sample('Eval_2')) # Load dataset and get features
+json = {'features': X.tolist()} # Turn arr to list so it's JSON serializable
+r = requests.post('http://127.0.0.1:3000/shallow/rfc', json=json) # Make a request to url
+print(r.json()) # Get model predictions
+
+### Possible urls:
+/shallow/rfc
+/shallow/svc
+/deep
+/heuristic
