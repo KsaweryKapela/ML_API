@@ -8,13 +8,13 @@ from clf_models.heuristic_classification import SimpleHeuristicModel
 
 app = Flask(__name__)
 
-
 @app.route("/shallow/<model>", methods=['POST'])
 def return_shallow_model(model):
 
     requested_data = request.get_json()
     features = requested_data['features']
 
+    # Preparing 2d arr, even if there's if sample == 1
     if not isinstance(features[0], list):
         features = [features]
 
@@ -68,4 +68,4 @@ def return_heuristic_model():
 
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    app.run(port=3000)
