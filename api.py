@@ -8,6 +8,7 @@ from clf_models.heuristic_classification import SimpleHeuristicModel
 
 app = Flask(__name__)
 
+
 @app.route("/shallow/<model>", methods=['POST'])
 def return_shallow_model(model):
 
@@ -64,6 +65,7 @@ def return_heuristic_model():
     heuristic_pred = heuristic_model.predict(features)
 
     return jsonify(prediction=heuristic_pred)
+
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)

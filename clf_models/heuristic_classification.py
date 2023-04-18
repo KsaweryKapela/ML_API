@@ -8,7 +8,6 @@ class SimpleHeuristicModel():
     def __init__(self):
         self.means = self.open_means()
         self.input = None
-
         
     def open_means(self):
         for loop in range(2):
@@ -37,7 +36,6 @@ class SimpleHeuristicModel():
         df_means = pd.DataFrame(means_tuples)
         df_means.to_csv('clf_models/models/means_heuristic_model.csv')
 
-
     def predict(self, input):
 
         predictions = []
@@ -52,7 +50,6 @@ class SimpleHeuristicModel():
 
         return predictions
 
-
     def check_input(self):
         
         if len(self.input.shape) == 1:
@@ -64,7 +61,6 @@ class SimpleHeuristicModel():
                 return True
 
         raise Exception('Provide (x, 54) dim array.')
-    
 
     def categorize(self, features):
 
