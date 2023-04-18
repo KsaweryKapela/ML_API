@@ -3,6 +3,12 @@
 This project aims to create classification models for the Convertype dataset
 (https://archive.ics.uci.edu/ml/datasets/Covertype).
 
+All code to create models can be found in /clf_models directory. 
+Trained models be found in /clf_models/models directory.
+Main directory contains API, model evaluation and dockerfile.
+
+# Models description
+
 The Heuristic model categorizes input features based on the lowest sum of differences between the
 input feature and overall means of features from the dataset sample (n=10,000). It collects means 
 from three variables and uses them as a features: Elevation, Slope and Horizontal_Distance_To_Roadways.
@@ -24,7 +30,9 @@ Confusion Matrix is plotted for each model. The relatively low performance of ne
 be explained by the limited sample size and lack of time and computational resources to expand the
 parameter grid and try different architectures. Heuristic model isn't accurate at all.
 
-The API file is a Flask API created with three endpoints. All endpoints take a JSON file with a one or
+# Api file
+
+The API file is a Flask app created with three endpoints. All endpoints take a JSON file with a one or
 more set of features as input and return values predicted by specific model. One of the endpoints serves 
 two models, which the user can choose from by providing a different variable in the URL. The requests
 made to all API endpoints can be seen in the using_API file.
