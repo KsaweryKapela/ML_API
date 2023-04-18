@@ -3,9 +3,10 @@
 This project aims to create classification models for the Convertype dataset
 (https://archive.ics.uci.edu/ml/datasets/Covertype).
 
-All code to create models can be found in /clf_models directory. 
-Trained models be found in /clf_models/models directory.
-Main directory contains API, model evaluation and dockerfile.
+Code to create and evaluate models can be found in /clf_models directory, 
+which also contains requirements for model construction and evaluation. 
+Trained models can be found in /clf_models/models directory.
+Main directory contains API, requirements for API and dockerfile.
 
 ## Models description
 
@@ -32,9 +33,8 @@ parameter grid and try different architectures. Heuristic model isn't accurate a
 
 ## API
 
-The api.py file is a Flask app created with three endpoints. All endpoints take a JSON file with a one or
-more set of features as input and return values predicted by specific model. One of the endpoints serves 
-two models, which the user can choose from by providing a different variable in the URL. The requests
-made to all API endpoints can be seen in the using_API file.
+The api.py file is a Flask app created with three endpoints. All endpoints use JSON file with a one or
+more set of features as payload and return values predicted by specific model. One of the endpoints serves 
+two models, which the user can choose from by providing a different variable in the URL.
 
 Dockerfile was created for a project, from which API image can be build and run.
