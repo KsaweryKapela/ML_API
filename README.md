@@ -49,7 +49,4 @@ r = requests.post('http://127.0.0.1:3000/shallow/rfc', json=json) # Make a reque
 print(r.json()) # Get model predictions
 
 ### Possible urls:
-/shallow/rfc
-/shallow/svc
-/deep
-/heuristic
+/shallow/rfc | /shallow/svc | /deep | /heuristic
