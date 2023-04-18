@@ -43,10 +43,10 @@ Dockerfile was created for a project, from which API image can be build and run.
 import requests
 from clf_models.helpers import open_covtype_sample, X_y_split
 
-X, y = X_y_split(open_covtype_sample('Eval_2')) # Load dataset and get features
-json = {'features': X.tolist()} # Turn arr to list so it's JSON serializable
-r = requests.post('http://127.0.0.1:3000/shallow/rfc', json=json) # Make a request to url
+X, y = X_y_split(open_covtype_sample('Eval_2')) # Load dataset and get features <br />
+json = {'features': X.tolist()} # Turn arr to list so it's JSON serializable <br />
+r = requests.post('http://127.0.0.1:3000/shallow/rfc', json=json) # Make a request to url <br />
 print(r.json()) # Get model predictions
 
 ### Possible urls:
-/shallow/rfc | /shallow/svc | /deep | /heuristic
+/shallow/rfc <br /> /shallow/svc <br /> /deep <br /> /heuristic
