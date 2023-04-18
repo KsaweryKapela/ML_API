@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from helpers import open_covtype_sample
+from clf_models.helpers import open_covtype_sample
 from random import randint
 
 
@@ -13,14 +13,15 @@ class SimpleHeuristicModel():
     def open_means(self):
         for loop in range(2):
             try:
-                means = pd.read_csv('means_heuristic_model.csv').to_numpy()
+                means = pd.read_csv('clf_models/models/means_heuristic_model.csv').to_numpy()
                 return means
             
             except FileNotFoundError:
                 print('File with means not found, generating means based on sample.')
                 self.generate_means()
                 print('Means generated')
-
+                
+        print('Error, means could not be loaded nor generated')
 
     def generate_means(self):
 
@@ -34,7 +35,7 @@ class SimpleHeuristicModel():
                                 working_df[2].mean(),
                                 working_df[5].mean()))
         df_means = pd.DataFrame(means_tuples)
-        df_means.to_csv('means_heuristic_model.csv')
+        df_means.to_csv('clf_models/models/means_heuristic_model.csv')
 
 
     def predict(self, input):
@@ -80,7 +81,7 @@ class SimpleHeuristicModel():
                 else:
                     abs_diff += abs(working_means[i2] - features[i2])
                 
-                # Adding some variance to results
+                # Adding some variance to results, as this solution only predict category 4
                 abs_diff += randint(-1500, 1500)
                 
             if abs_diff < lowest_mean_diff:

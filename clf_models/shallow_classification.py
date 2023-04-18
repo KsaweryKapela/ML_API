@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
-import numpy as np
 import pickle
 
 def tweak_param(clf, clf_param, X, y, opening_value, method='*', increase=10, loops=7):
@@ -37,11 +36,12 @@ def tweak_param(clf, clf_param, X, y, opening_value, method='*', increase=10, lo
     print(f'{clf()} best acc = {best_acc} | Best {clf_param} value = {best_param_value}')
     return best_acc, best_param_value
 
+
 def save_model(model, name, X, y):
     model.fit(X, y)
-    pickle.dump(model, open(name, 'wb'))
+    path = 'clf_models/models/'
+    pickle.dump(f'{path}{model}', open(name, 'wb'))
     print(f'{model} succesfully saved as {name}')
-
 
 
 if __name__ == "__main__":
